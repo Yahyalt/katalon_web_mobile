@@ -20,7 +20,7 @@ import com.kms.katalon.core.mobile.keyword.internal.MobileDriverFactory as Mobil
 import io.appium.java_client.AppiumDriver as AppiumDriver
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
 
-Mobile.startApplication('C:\\Users\\LENOVO\\Downloads\\APIDemos (1).apk', true)
+Mobile.startApplication('C:\\Users\\LENOVO\\Katalon Studio\\mobile android\\mobile_app\\APIDemos (1).apk', true)
 
 Mobile.tap(findTestObject('Object Repository/Application/Android3/android.widget.TextView - App'), 0)
 

@@ -16,29 +16,27 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-import com.kms.katalon.core.mobile.keyword.internal.MobileDriverFactory as MobileDriverFactory
-import io.appium.java_client.AppiumDriver as AppiumDriver
-import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
 
-Mobile.startApplication('C:\\Users\\LENOVO\\Katalon Studio\\mobile android\\mobile_app\\APIDemos (1).apk', true)
+WebUI.openBrowser('')
 
-Mobile.tap(findTestObject('Object Repository/Application/Android3/android.widget.TextView - App'), 0)
+WebUI.navigateToUrl('https://katalon-demo-cura.herokuapp.com/')
 
-Mobile.tap(findTestObject('Object Repository/Application/Android3/android.widget.TextView - Notification'), 0)
+WebUI.click(findTestObject('Object Repository/Web/web2/Page_CURA Healthcare Service/i_CURA Healthcare_fa fa-bars'))
 
-Mobile.tap(findTestObject('Object Repository/Application/Android3/android.widget.TextView - NotifyWithText'), 0)
+WebUI.click(findTestObject('Object Repository/Web/web2/Page_CURA Healthcare Service/a_Login'))
 
-Mobile.tap(findTestObject('Object Repository/Application/Android3/android.widget.Button - Show Long Notification'), 0)
+WebUI.setText(findTestObject('Object Repository/Web/web2/Page_CURA Healthcare Service/input_Username_username'), 'John')
 
-AppiumDriver<?> driver = MobileDriverFactory.getDriver()
+WebUI.setEncryptedText(findTestObject('Object Repository/Web/web2/Page_CURA Healthcare Service/input_Password_password'), 
+    'aobfF2LhvPs=')
 
-def toast = driver.findElementByXPath('//android.widget.Toast[@text=\'This is a long notification. See, you might need a second more to read it.\']')
+WebUI.click(findTestObject('Object Repository/Web/web2/Page_CURA Healthcare Service/button_Login'))
 
-println('Toast element: ' + toast)
+WebUI.click(findTestObject('Object Repository/Web/web2/Page_CURA Healthcare Service/p_Login failed Please ensure the username a_eb55b5'))
 
-if (toast == null) {
-    KeywordUtil.markFailed('ERROR: Toast object not found!')
-}
+'Verify warning has correct label'
+WebUI.verifyElementText(findTestObject('Web/web2/Page_CURA Healthcare Service/p_Login failed Please ensure the username a_eb55b5'), 
+    'Login failed! Please ensure the username and password are valid.')
 
-Mobile.closeApplication()
+WebUI.closeBrowser()
 

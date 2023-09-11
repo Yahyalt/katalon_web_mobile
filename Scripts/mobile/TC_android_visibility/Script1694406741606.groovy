@@ -17,7 +17,7 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-Mobile.startApplication('C:\\Users\\LENOVO\\Downloads\\APIDemos (1).apk', true)
+Mobile.startApplication('C:\\Users\\LENOVO\\Katalon Studio\\mobile android\\mobile_app\\APIDemos (1).apk', true)
 
 Mobile.tap(findTestObject('Object Repository/Application/Android/android.widget.TextView - Views'), 0)
 

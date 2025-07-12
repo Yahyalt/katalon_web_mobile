@@ -9,7 +9,7 @@ This Katalon Studio project includes:
 - **Web Testing**: Web application testing for CURA Healthcare Service and ParaBank
 - **Test Suites**: Organized test execution for both mobile and web scenarios
 
-## 🛠️ Prerequisites
+## 🛠️ Prerequisites 
 
 ### Required Software
 1. **Katalon Studio** (Version 5.9.0 or higher)
